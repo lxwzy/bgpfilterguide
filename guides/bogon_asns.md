@@ -9,21 +9,17 @@ permalink: /guides/bogon_asns/
 
 # 虚假 (Bogon) ASN 过滤
 
-Original publication: [http://as2914.net/bogon_asns/configuration_examples.txt](http://as2914.net/bogon_asns/configuration_examples.txt)
+最早出版于: [http://as2914.net/bogon_asns/configuration_examples.txt](http://as2914.net/bogon_asns/configuration_examples.txt)
 
-## Purpose
+## 目的
 
-Private or Reserved ASNs have no place in the public DFZ. Barring these from
-the DFZ helps improve accountability and dampen accidental exposure of internal
-routing artifacts.
+私有或预留 ASN 不应该在公共 DFZ 中。阻止这些来自 DFZ 的错误有助于加强问责并减少暴露内部路由的意外。
 
-All modern devices support 4-byte ASNs. Any occurrence of "23456" in the DFZ is
-a either a misconfiguration or software issue.
+所有现代设备都支持4字节 ASN。DFZ 中出现的“23456”可能是配置错误或软件问题。
 
-Rejecting all EBGP routes which contain a Bogon ASN anywhere in the `AS_PATH` is
-a form of [Fail-fast](https://en.wikipedia.org/wiki/Fail-fast).
+拒绝 AS_PATH 中包含虚假 (Bogon) ASN 的 EBGP 路由是一种[Fail-fast(快速失败)](https://en.wikipedia.org/wiki/Fail-fast)的形式。
 
-# Configuration Examples
+# 配置示例
 
 ## Junos
 
@@ -182,7 +178,7 @@ exit
 
 ## OpenBGPD
 
-从 [OpenBSD 示例](https://github.com/openbsd/src/blob/master/etc/examples/bgpd.conf#L123-L132) 复制
+复制于 [OpenBSD 示例](https://github.com/openbsd/src/blob/master/etc/examples/bgpd.conf#L123-L132)
 
 ```
 deny from any AS 23456                          # AS_TRANS

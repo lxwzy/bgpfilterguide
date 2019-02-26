@@ -1,20 +1,19 @@
 ---
 layout: page
-title: Bogon Prefixes
+title: 虚假 (Bogon) 前缀
 permalink: /guides/bogon_prefixes/
 ---
 
 * TOC
 {:toc}
 
-# Filter Bogon prefixes
+# 虚假 (Bogon) 前缀过滤
 
-## Purpose
+## 目的
 
-These prefixes are not globally unique prefixes. IETF didn't intend for
-these to be routed on the public Internet.
+这些不是 全局唯一(Globally unique) 的前缀。IETF并未规划将它们路由到公共互联网上。
 
-# Configuration Examples IPv4
+# IPv4 配置示例
 
 ## BIRD
 ```
@@ -75,7 +74,7 @@ filter ixp_in {
 ```
 ## OpenBGPD
 
-Copied from [openbsd examples](https://github.com/openbsd/src/blob/master/etc/examples/bgpd.conf#L97-L109)
+复制于 [OpenBSD 示例](https://github.com/openbsd/src/blob/master/etc/examples/bgpd.conf#L97-L109)
 
 ```
 deny from any prefix 0.0.0.0/8 prefixlen >= 8           # 'this' network [RFC1122]
@@ -147,7 +146,7 @@ route-policy BGP_FILTER_IN
   endif
 end-policy
 ```
-# Configuration Examples IPv6
+# IPv6 配置示例
 
 ## BIRD
 ```
@@ -203,7 +202,7 @@ filter ixp_in {
 
 ## OpenBGPD
 
-Copied from [openbsd examples](https://github.com/openbsd/src/blob/master/etc/examples/bgpd.conf#L111-L121)
+复制于 [OpenBSD 示例](https://github.com/openbsd/src/blob/master/etc/examples/bgpd.conf#L111-L121)
 
 ```
 deny from any prefix ::/8 prefixlen >= 8
@@ -219,7 +218,7 @@ deny from any prefix fec0::/10 prefixlen >= 10          # old site local unicast
 deny from any prefix ff00::/8 prefixlen >= 8            # multicast
 ```
 
-## Juniper and Cisco
+## Juniper 和 Cisco
 
 Gert Doering's [ipv6-filters](https://www.space.net/~gert/RIPE/ipv6-filters.html)
 
