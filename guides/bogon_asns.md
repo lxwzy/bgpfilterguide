@@ -1,13 +1,13 @@
 ---
 layout: page
-title: Filtering Bogon ASNs
+title: 虚假 (Bogon) ASN 过滤
 permalink: /guides/bogon_asns/
 ---
 
 * TOC
 {:toc}
 
-# Bogon ASN filtering
+# 虚假 (Bogon) ASN 过滤
 
 Original publication: [http://as2914.net/bogon_asns/configuration_examples.txt](http://as2914.net/bogon_asns/configuration_examples.txt)
 
@@ -182,7 +182,7 @@ exit
 
 ## OpenBGPD
 
-Copied from [openbsd examples](https://github.com/openbsd/src/blob/master/etc/examples/bgpd.conf#L123-L132)
+从 [OpenBSD 示例](https://github.com/openbsd/src/blob/master/etc/examples/bgpd.conf#L123-L132) 复制
 
 ```
 deny from any AS 23456                          # AS_TRANS
